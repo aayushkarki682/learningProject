@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Dimensions, Image, View, StatusBar, TouchableOpacity } from "react-native";
+import { AppRegistry, StyleSheet, Dimensions, Image, View, StatusBar,Text, TouchableOpacity, Modal } from "react-native";
 
 
 import MapView from 'react-native-maps';
 import Polyline from '@mapbox/polyline';
 import CurrentLocationButton from './currentLocationButton';
-
+import ModalMap from './ModalMap';
 
 export default class Map extends React.Component {
 	  constructor(props) {
@@ -139,10 +139,11 @@ export default class Map extends React.Component {
      }
 
      forDirections(id){
-       console.log(id);
-       console.log(this.state.markers[id].coordinates.latitude);
        let forDest = this.state.markers[id].coordinates.latitude + "," + this.state.markers[id].coordinates.longitude;
        this.getDirections(this.state.concat, forDest);
+       return (
+         <ModalMap />
+       )
      }
 
 
