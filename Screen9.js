@@ -3,6 +3,7 @@ import { Container,Root, Header, Content, List, ListItem, Text, Icon, Left, Body
 import { Font, AppLoading } from "expo";
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import EmbassyInfos from './EmbassyInfos';
+import EmergencyNumbers from './EmergencyNumbers';
 export default class ListIconExample extends Component {
   constructor(props) {
   super(props);
@@ -49,7 +50,7 @@ export default class ListIconExample extends Component {
             <Right>
               <Icon active
                name="arrow-forward"
-               //onPress = {() => this.props.navigation.navigate('E')}
+               onPress = {() => this.props.navigation.navigate('EmergencyNumbers', {})}
                />
             </Right>
           </ListItem>
